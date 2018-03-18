@@ -1,0 +1,25 @@
+.flex .btn{
+    min-width: 80px;
+}
+.btn-item.active{
+    background: #009688;
+    color: #fff;
+}
+.btn-item{
+    border: 1px solid transparent;
+    display: inline-block;
+    box-shadow: none;
+    color: #9B9B9B;
+}
+.btn{
+    text-align: center;
+    transition: 0.2s ease-out;
+    border-radius: 2px;
+}
+.btn:hover{
+    color: #004E47;
+}
+.btn-item:hover{
+    border: 1px solid #009688;
+}
+

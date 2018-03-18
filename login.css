@@ -300,3 +300,8 @@ label:hover:before {
 #custom-search-input .glyphicon-search{
     font-size: 23px;
 }
+
+.text-centers{
+    max-height: 200px;
+    max-width: 200px;
+}
