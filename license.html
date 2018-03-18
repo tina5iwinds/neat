@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<link rel="stylesheet" href="css/test.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#CollegeNameSelected').on('change',function(){
+				var cCollegeName = $(this).val();
+				if(cCollegeName){
+					$.ajax({
+						type:'POST',
+						url:'Ajax.php',
+						data: 'CollegeName='+cCollegeName,
+						success:function(html){
+					       $('#CollegeDepartmentSelected').html(html);
+				        }
+				    });
+				}else{
+					$('#CollegeDepartmentSelected').html('<option value="">Select college name first</option>');
+				}
+            });
+        });
+        var timeout;
+		var $mt=0;
+		$(document).ready(function(){
+            $(".next").click(function(){
+				clearTimeout(timeout);
+				setTimeout(function () {
+					$mt=$mt-125;
+					$("#jump").css("margin-top",$mt);
+				}, 10);
+			});
+        });
+		$(document).ready(function(){
+		  $("#oralflip").click(function(){
+			$("#textpanel").slideUp("slow");
+			$("#doingpanel").slideUp("slow");
+			$("#oralpanel").slideDown("slow");
+		  });
+		});
+		$(document).ready(function(){
+		  $("#testflip").click(function(){
+		      $("#oralpanel").slideUp("slow");
+              $("#doingpanel").slideUp("slow");
+              $("#textpanel").slideDown("slow");
+          });
+		});
+		$(document).ready(function(){
+		  $("#doingflip").click(function(){
+              $("#oralpanel").slideUp("slow");
+              $("#textpanel").slideUp("slow");
+              $("#doingpanel").slideDown("slow");
+          });
+        });
+
+											/*$(document).ready(function(){
+												$("#QuestionAdd").click(function(){
+													$("#QuestionAddPanel01").slideToggle("slow");
+												});
+											});
+											$(document).ready(function(){
+												$("#QuestionAdd02").click(function(){
+													$("#QuestionAddPanel02").slideToggle("slow");
+												});
+											});
+											$(document).ready(function(){
+												$("#QuestionDel02").click(function(){
+													$("#QuestionAddPanel01").slideUp("slow");
+												});
+											});
+											$(document).ready(function(){
+												$("#QuestionDel03").click(function(){
+													$("#QuestionAddPanel02").slideUp("slow");
+												});
+											});
+
+
+											$(document).ready(function(){
+												$("#QuestionAdd2").click(function(){
+													$("#QuestionAddPanel21").slideToggle("slow");
+												});
+											});
+											$(document).ready(function(){
+												$("#QuestionAdd22").click(function(){
+													$("#QuestionAddPanel22").slideToggle("slow");
+												});
+											});
+											$(document).ready(function(){
+												$("#QuestionDel22").click(function(){
+													$("#QuestionAddPanel21").slideUp("slow");
+												});
+											});
+											$(document).ready(function(){
+												$("#QuestionDel23").click(function(){
+													$("#QuestionAddPanel22").slideUp("slow");
+												});
+											});*/
+                                            $(document).ready(function(){
+												$("#oralflip1").click(function(){
+													$("#textpanel1").slideUp("slow");
+													$("#doingpanel1").slideUp("slow");
+													$("#oralpanel1").slideDown("slow");
+												});
+											});
+											$(document).ready(function(){
+												$("#testflip1").click(function(){
+													$("#oralpanel1").slideUp("slow");
+													$("#doingpanel1").slideUp("slow");
+													$("#textpanel1").slideDown("slow");
+												});
+											});
+											$(document).ready(function(){
+												$("#doingflip1").click(function(){
+													$("#oralpanel1").slideUp("slow");
+													$("#textpanel1").slideUp("slow");
+													$("#doingpanel1").slideDown("slow");
+												});
+											});
+                                            $(document).ready(function(){
+												$("#other").click(function(){
+													$("#othertext").slideToggle("slow");	
+												});
+											});
+
+
+											$(document).ready(function(){
+												$("#ReExamY").click(function(){
+													$("#stage2").slideDown("slow");
+												});
+											});
+											$(document).ready(function(){
+												$("#ReExamN").click(function(){
+													$("#stage2").slideUp("slow");		
+												});
+											});
+											/*$(document).ready(function(){
+												$("#visitflip02").click(function(){
+													$("#interviewpanel02").slideUp("slow");
+													$("#testpanel02").slideUp("slow");
+													$("#visitpanel02").slideToggle("slow");
+												});
+											});*/
+
+											$( function() {
+											    $( "#datepicker" ).datepicker();
+											  } );
+</script>
+
+</head>
+<body>
+
+	<div id="page-wrap">
+				<?php
+
+	  		include('config.php');
+	  		$query = mysqli_query($conn,"SELECT * FROM CollegeList");
+
+	  		?>
+
+<form action="LiscenseSubmit.php" method="POST" id="jump" >
+
+	證照基本資料:<br><br>
+    證照類別: <select name="CollegeNameSelected" id="CollegeNameSelected" required >
+	<option disabled selected hidden>請選擇應考證照類別</option>
+    <option value="language">語言</option>
+    <option value="food">餐飲</option>
+    <option value="information">資訊</option>
+    <option value="medicine">醫學</option>
+    <option value="saving">救援</option>
+    <option value="business">商業</option>
+    <?php/*
+    while($dbrow = mysqli_fetch_array($query)){
+        echo '<option value="'.$dbrow['CollegeName'].'">'.$dbrow['CollegeName'].'</option>';
+    }
+    */?>
+	</select><br>
+	應考證照:
+	<select name="LicenseNameSelected" id="LicenseNameSelected" required>
+        <option value="">請選擇證照名稱</option>
+	</select><br>
+	考試日期: <input id="datepicker" name="ExamDate" required><br>
+	報名方式: <input type="checkbox" value="online" name="SignUp"> 線上表單
+             <input type="checkbox" value="email" name="Signup"> Email寄信
+             <input type="checkbox" value="mail" name="SignUp"> 郵寄
+             <input type="checkbox" value="mail" name="SignUp" id="other"> 其他方式 
+            <input type="text" id="othertext" name="SignUp" style="display:none"><br>
+    考試時間長度(總共):
+					<input type="radio" name="ExamTime" value="under2" required>2小時以下
+					<input type="radio" name="ExamTime" value="2to4">2-4小時
+					<input type="radio" name="ExamTime" value="4to6">4-6小時
+                    <input type="radio" name="ExamTime" value="up6">6小時以上<br>
+    考試形式(第一階段):<br>
+				    <input type="radio" id="oralflip" name="ExamType01" value="口試" required>口試
+				    <input type="radio" id="testflip" name="ExamType01" value="筆試" >筆試
+					<input type="radio" id="doingflip" name="ExamType01" value="實作" >實作
+                    <div id="oralpanel" style="display:none">
+                        考試內容補充:
+                        <input type="text" placeholder="可填寫題型、類別或難易度等等.." size="30" style="height:30px"><br>
+                    </div>
+                    <div id="textpanel" style="display:none">
+                        考試題型:
+                        <input type="text" placeholder="旅遊類、時事類題型等等.." size="30" style="height:30px"><br>
+                    </div>
+                    <div id="doingpanel" style="display:none" >
+                        考試題型:
+                        <input type="text" placeholder="主題、題目等等.." size="30" style="height:30px">
+                    </div>
+                   
+    <br>
+    有無複試: <input type="radio" id="ReExamY" name="ReExam" value="yes"  required>是
+             <input type="radio" id="ReExamN" name="ReExam" value="no" >否 <br>
+    <div id="stage2" style="display:none">
+    考試形式(第二階段):<br>
+				    <input type="radio" id="oralflip1" name="InterviewType01" value="口試"  required>口試
+				    <input type="radio" id="testflip1" name="InterviewType01" value="筆試" >筆試
+					<input type="radio" id="doingflip1" name="InterviewType01" value="實作" >實作
+                    <div id="oralpanel1" style="display:none">
+                        考試內容補充:
+                        <input type="text" placeholder="可填寫題型、類別或難易度等等.." size="30" style="height:30px"><br>
+                    </div>
+                    <div id="textpanel1" style="display:none">
+                        考試題型:
+                        <input type="text" placeholder="旅遊類、時事類題型等等.." size="30" style="height:30px"><br>
+                    </div>
+                    <div id="doingpanel1" style="display:none">
+                        考試題型:
+                        <input type="text" placeholder="主題、題目等等.." size="30" style="height:30px">
+                    </div>
+    </div>                   
+    <br>個人經驗:<br><br>
+    
+    準備時間:&nbsp;從&nbsp;<input type="text" size="5">&nbsp;個月前開始，平均一周&nbsp;<input type="text" size="5">&nbsp;小時<br>
+    
+    是否參加補習班:
+                    <input type="radio" name="InterviewType01" value="自學" required>自學
+				    <input type="radio" name="InterviewType01" value="補習班">補習班<br>
+                    <!--<div id="CramSchool">
+                        <input type="text" placeholder="可填寫題型、類別或難易度等等..">                    
+                    </div>-->
+    推薦用書: <input type="text" style="height:30px;font-family:Microsoft JhengHei;padding:6px;" size="30" placeholder="書名、出版社.."><br>
+    其他資源: <input type="text" style="height:30px;font-family:Microsoft JhengHei;padding:6px;" size="30" placeholder="推薦網站、課程、練習app等等.."><br>
+    備註(準備訣竅): <input type="text" style="height:30px;font-family:Microsoft JhengHei;padding:6px;" size="30"><br>
+    
+    <button type="submit">submit</button>
+        </form>
+        <form action="Collegepage.php">
+            <button id="btn">回文章列表</button>
+</div>
+</body>
+</html>

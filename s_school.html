@@ -39,6 +39,10 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="profile.css">
 
+    <link href="http://www.cssscript.com/wp-includes/css/sticky.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Animate.css -->
     <link rel="stylesheet" href="css/animate.css">
     <!-- Icomoon Icon Fonts-->
@@ -54,15 +58,16 @@
 
     <!-- Theme style  -->
     <link rel="stylesheet" href="css/style.css">
-    
+
     <link rel="stylesheet" href="css/school-2.css">
-    
+
     <link rel="stylesheet" href="share.css">
-    
-    <link rel="stylesheet" href="css/component.css">
-    
-    
-    
+
+
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <!-- Modernizr JS -->
     <script src="js/modernizr-2.6.2.min.js"></script>
@@ -70,7 +75,7 @@
     <!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-	
+
 </head>
 
 <body>
@@ -103,80 +108,282 @@
                 </div>
             </div>
         </nav>
-    <div class="rela-block profile-card">
-        <div id="fh5co-services" style="min-height: 800px;">
-           <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-                <select onChange="myselect();" id="myselect">
-<option value="" >
-<option value="1">口試
-<option value="2">筆試
-<option value="3">參訪
-</select>
-	        <br><br>
-	        
-	        <div class="flex hide-on-small" id="sel" name="sel" style="display:inline;">
-           <div class="titles">面試官人數</div>
-           <a class="btn btn-item active">1人</a>
-           <a class="btn btn-item">2人</a>
-           <a class="btn btn-item">3人</a>
-           <a class="btn btn-item">4人</a>
-           <a class="btn btn-item">5人</a>
-           <br><br>
-           <div class="titles">面試類型</div>
-           <a class="btn btn-item active">個人</a>
-           <a class="btn btn-item">團體</a>
-           <br><br>
-           <div class="titles">時間長度</div>
-           <a class="btn btn-item active">5分鐘</a>
-           <a class="btn btn-item">15分鐘</a>
-           <a class="btn btn-item">30分鐘</a>
-           <br><br>
-           <div class="titles">題目：<input type="text" style="text-decoration: underline;  min-width: 100px;"></div>
-            <br>
-           <div class="titles">答案：<input type="text" style="text-decoration: underline;  min-width: 100px;"></div>
-            </div>
-            
-            <div class="flex hide-on-small" id="sal" name="sal" style="display:inline;">
-           <div class="titles">面試官人數</div>
-           <a class="btn btn-item active">1人</a>
-           <a class="btn btn-item">2人</a>
-           
-           <br><br>
-           <div class="titles">面試類型</div>
-           <a class="btn btn-item active">個人</a>
-           <a class="btn btn-item">團體</a>
-           <br><br>
-           <div class="titles">時間長度</div>
-           <a class="btn btn-item active">5分鐘</a>
-           <a class="btn btn-item">15分鐘</a>
-           <a class="btn btn-item">30分鐘</a>
-           <br><br>
-           <div class="titles">題目：<input type="text" style="text-decoration: underline;  min-width: 100px;"></div>
-            <br>
-           <div class="titles">答案：<input type="text" style="text-decoration: underline;  min-width: 100px;"></div>
-            
-            <div class="dotstyle dotstyle-tooltip">
-					<h2>Tooltip</h2>
-					<ul>
-						<li><a href="#">極差</a></li>
-						<li><a href="#">差</a></li>
-						<li><a href="#">無意見</a></li>
-						<li><a href="#">好</a></li>
-						<li><a href="#">極好</a></li>
-					</ul>
-            </div>
-            <div class="col-md-1"></div>
-            </div>
-        </div>
-        </div>
-    </div>
-    </div>
-    </div>
+        <div class="rela-block profile-card">
+            <div id="fh5co-services" style="min-height: 800px;">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
 
-               
-        <!-- END container-wrap -->
+                        <div class="titles">校名
+                            <select class="selectpicker" data-size="10" style="min-width: 15%">
+                            <option>國立台灣大學</option>
+                            <option>國立政治大學</option>
+                            <option>國立成功大學</option>
+                            <option>國立台灣大學</option>
+                            <option>國立政治大學</option>
+                            <option>國立成功大學</option>
+                            <option>國立台灣大學</option>
+                            <option>國立政治大學</option>
+                            <option>國立成功大學</option>
+                            <option>國立台灣大學</option>
+                            <option>國立政治大學</option>
+                            <option>國立成功大學</option>
+                            <option>國立成功大學</option>
+                            <option>國立台灣大學</option>
+                            <option>國立政治大學</option>
+                            <option>國立成功大學</option>
+                                </select>
+                        </div><br>
+                        <div class="titles">面試科系 <input type="text" style="min-width: 100px; max-height: 25px;"></div>
+                            <br>
+                        
+                        <div class="titles">級分
+                            <select class="selectpicker" data-size="10" style="min-width: 5%;">
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option>15</option>
+                            <option>16</option>
+                            <option>17</option>
+                            <option>18</option>
+                            <option>19</option>
+                            <option>20</option>
+                            <option>21</option>
+                            <option>22</option>
+                            <option>23</option>
+                            <option>24</option>
+                            <option>25</option>
+                            <option>26</option>
+                            <option>27</option>
+                            <option>28</option>
+                            <option>29</option>
+                            <option>30</option>
+                            <option>31</option>
+                            <option>32</option>
+                            <option>33</option>
+                            <option>34</option>
+                            <option>35</option>
+                            <option>36</option>
+                            <option>37</option>
+                            <option>38</option>
+                            <option>39</option>
+                            <option>40</option>
+                            <option>41</option>
+                            <option>42</option>
+                            <option>43</option>
+                            <option>44</option>
+                            <option>45</option>
+                            <option>46</option>
+                            <option>47</option>
+                            <option>48</option>
+                            <option>49</option>
+                            <option>50</option>
+                            <option>51</option>
+                            <option>52</option>
+                            <option>53</option>
+                            <option>54</option>
+                            <option>55</option>
+                            <option>56</option>
+                            <option>57</option>
+                            <option>58</option>
+                            <option>59</option>
+                            <option>60</option>
+                            <option>61</option>
+                            <option>62</option>
+                            <option>63</option>
+                            <option>64</option>
+                            <option>65</option>
+                            <option>66</option>
+                            <option>67</option>
+                            <option>68</option>
+                            <option>69</option>
+                            <option>70</option>
+                            <option>71</option>
+                            <option>72</option>
+                            <option>73</option>
+                            <option>74</option>
+                            <option>75</option>
+                                </select>
+                        </div><br>
+                        <div class="hi">
+                                <div class="titles">有無錄取</div>
+                                <a class="btn btn-item active">正取</a>
+                                <a class="btn btn-item active">備取</a>
+                                <a class="btn btn-item">無</a>
+                            </div>
+                            <br>
+                            <div class="titles">面試年份
+                            <select class="selectpicker" data-size="10" style="width: 8%;">
+                            <option>1999</option>
+                            <option>2000</option>
+                            <option>2001</option>
+                            <option>2002</option>
+                            <option>2003</option>
+                            <option>2004</option>
+                            <option>2005</option>
+                            <option>2006</option>
+                            <option>2007</option>
+                            <option>2008</option>
+                            <option>2009</option>
+                            <option>2010</option>
+                            <option>2011</option>
+                            <option>2012</option>
+                            <option>2013</option>
+                            <option>2014</option>
+                            <option>2015</option>
+                            <option>2016</option>
+                            <option>2017</option>
+                            <option>2018</option>
+                                </select>
+                        </div><br>
+                        <div class="hi">
+                                <div class="titles">倍審資料</div>
+                                <a class="btn btn-item active">制式</a>
+                                <a class="btn btn-item">自製</a>
+                                <a class="btn btn-item">無</a>
+                            </div>
+                            <br>
+                            
+                        <h4>第一階段</h4>
+                        <input type="radio" id="oralflip" name="ExamType01" value="口試" required>口試
+                        <input type="radio" id="testflip" name="ExamType01" value="筆試">筆試
+                        <input type="radio" id="doingflip" name="ExamType01" value="參訪">參訪
+                        <br><br>
+                        
+
+                        <div class="flex hide-on-small" id="oralpanel" style="display:none;">
+                            <div class="hi">
+                                <div class="titles">面試官人數</div>
+                                <a class="btn btn-item active">1人</a>
+                                <a class="btn btn-item">2人</a>
+                                <a class="btn btn-item">3人</a>
+                                <a class="btn btn-item">4人</a>
+                                <a class="btn btn-item">5人</a>
+                            </div>
+                            <br>
+                            <div class="hi">
+                                <div class="titles">面試類型</div>
+                                <a class="btn btn-item active">個人</a>
+                                <a class="btn btn-item">團體</a>
+                                <br><br>
+                            </div>
+                            <div class="hi">
+                                <div class="titles">時間長度</div>
+                                <a class="btn btn-item active">5分鐘</a>
+                                <a class="btn btn-item">15分鐘</a>
+                                <a class="btn btn-item">30分鐘</a>
+                            </div>
+                            <br><br>
+                            <div class="titles">題目：<input type="text" style="min-width: 450px;"></div>
+                            <br>
+                            <div class="titles">答案：<input type="text" style="min-width: 450px;"></div>
+                        </div>
+
+                        <div class="flex hide-on-small" id="textpanel" style="display:none;">
+                            
+                            <div class="titles">題目：<input type="text" style="text-decoration: underline;  min-width: 100px;"></div>
+                            <br>
+                            <div class="titles">答案：<input type="text" style="text-decoration: underline;  min-width: 100px;"></div>
+
+                            
+                            
+
+                        </div>
+                        <div class="flex hide-on-small" id="doingpanel" style="display:none;">
+                           <div class="titles">特殊需求</div><textarea style="width:300px;height:100px;">
+</textarea>
+                            <br>
+                            </div>
+                        <br><br>
+    
+                        <div id="stage2">
+                            <h4>第二階段</h4>
+				    <input type="radio" id="oralflip1" name="InterviewType01" value="口試" >口試
+				    <input type="radio" id="testflip1" name="InterviewType01" value="筆試" >筆試
+					<input type="radio" id="doingflip1" name="InterviewType01" value="參訪" >參訪
+                       <div class="flex hide-on-small" id="oralpanel1" style="display:none;">
+                            <div class="hi">
+                                <div class="titles">面試官人數</div>
+                                <a class="btn btn-item active">1人</a>
+                                <a class="btn btn-item">2人</a>
+                                <a class="btn btn-item">3人</a>
+                                <a class="btn btn-item">4人</a>
+                                <a class="btn btn-item">5人</a>
+                            </div>
+                            <br>
+                            <div class="hi">
+                                <div class="titles">面試類型</div>
+                                <a class="btn btn-item active">個人</a>
+                                <a class="btn btn-item">團體</a>
+                                <br><br>
+                            </div>
+                            <div class="hi">
+                                <div class="titles">時間長度</div>
+                                <a class="btn btn-item active">5分鐘</a>
+                                <a class="btn btn-item">15分鐘</a>
+                                <a class="btn btn-item">30分鐘</a>
+                            </div>
+                            <br><br>
+                            <div class="titles">題目：<input type="text" style="text-decoration: underline;  min-width: 100px;"></div>
+                            <br>
+                            <div class="titles">答案：<input type="text" style="text-decoration: underline;  min-width: 100px;"></div>
+                        </div>
+
+                        <div class="flex hide-on-small" id="textpanel1" style="display:none;">
+                            
+                            <div class="titles">題目：<input type="text" style="text-decoration: underline;  min-width: 100px;"></div>
+                            <br>
+                            <div class="titles">答案：<input type="text" style="text-decoration: underline;  min-width: 100px;"></div>
+
+                        </div>
+                          <div class="flex hide-on-small" id="doingpanel1" style="display:none;">
+                           <div class="titles">特殊需求</div><textarea style="width:300px;height:100px;">
+</textarea>
+                            <br>
+                            </div>
+                          <br><br>
+                            <div class="titles">想說的話:</div> <textarea style="width:300px;height:100px;">
+</textarea>
+                        <br>
+                        <div class="rate">
+                                <div class="titles">工作環境</div>
+                                <input type="radio" id="star5" name="rate" value="5" />
+                                <label for="star5" title="text">5 stars</label>
+                                <input type="radio" id="star4" name="rate" value="4" />
+                                <label for="star4" title="text">4 stars</label>
+                                <input type="radio" id="star3" name="rate" value="3" />
+                                <label for="star3" title="text">3 stars</label>
+                                <input type="radio" id="star2" name="rate" value="2" />
+                                <label for="star2" title="text">2 stars</label>
+                                <input type="radio" id="star1" name="rate" value="1" />
+                                <label for="star1" title="text">1 star</label>
+                                <br><br><br><br>
+                            </div>
+                    </div>
+                    <div class="btn" type="submit">submit</div>
+                    </div>
+                        <div class="col-md-1"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <!-- END container-wrap -->
 
     <!-- jQuery -->
     <script src="js/jquery.min.js"></script>
@@ -195,7 +402,105 @@
     <script src="js/jquery.countTo.js"></script>
     <!-- Main -->
     <script src="js/main.js"></script>
-    <script src="js/dots.js"></script>
+
+    <script>
+        $(function() {
+            $('a').click(function() {
+                $(this).addClass('active').siblings().removeClass('active');
+            });
+        });
+
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#CollegeNameSelected').on('change', function() {
+                var cCollegeName = $(this).val();
+                if (cCollegeName) {
+                    $.ajax({
+                        type: 'POST',
+                        url: 'Ajax.php',
+                        data: 'CollegeName=' + cCollegeName,
+                        success: function(html) {
+                            $('#CollegeDepartmentSelected').html(html);
+                        }
+                    });
+                } else {
+                    $('#CollegeDepartmentSelected').html('<option value="">Select college name first</option>');
+                }
+            });
+        });
+        var timeout;
+        var $mt = 0;
+        $(document).ready(function() {
+            $(".next").click(function() {
+                clearTimeout(timeout);
+                setTimeout(function() {
+                    $mt = $mt - 125;
+                    $("#jump").css("margin-top", $mt);
+                }, 10);
+            });
+        });
+        $(document).ready(function() {
+            $("#oralflip").click(function() {
+                $("#textpanel").slideUp("slow");
+                $("#doingpanel").slideUp("slow");
+                $("#oralpanel").slideDown("slow");
+            });
+        });
+        $(document).ready(function() {
+            $("#testflip").click(function() {
+                $("#oralpanel").slideUp("slow");
+                $("#doingpanel").slideUp("slow");
+                $("#textpanel").slideDown("slow");
+            });
+        });
+        $(document).ready(function() {
+            $("#doingflip").click(function() {
+                $("#oralpanel").slideUp("slow");
+                $("#textpanel").slideUp("slow");
+                $("#doingpanel").slideDown("slow");
+            });
+        });
+        $(document).ready(function() {
+            $("#oralflip1").click(function() {
+                $("#textpanel1").slideUp("slow");
+                $("#doingpanel1").slideUp("slow");
+                $("#oralpanel1").slideDown("slow");
+            });
+        });
+        $(document).ready(function() {
+            $("#testflip1").click(function() {
+                $("#oralpanel1").slideUp("slow");
+                $("#doingpanel1").slideUp("slow");
+                $("#textpanel1").slideDown("slow");
+            });
+        });
+        $(document).ready(function() {
+            $("#doingflip1").click(function() {
+                $("#oralpanel1").slideUp("slow");
+                $("#textpanel1").slideUp("slow");
+                $("#doingpanel1").slideDown("slow");
+            });
+        });
+        $(document).ready(function() {
+            $("#other").click(function() {
+                $("#othertext").slideToggle("slow");
+            });
+        });
+
+
+        $(document).ready(function() {
+            $("#ReExamY").click(function() {
+                $("#stage2").slideDown("slow");
+            });
+        });
+        $(document).ready(function() {
+            $("#ReExamN").click(function() {
+                $("#stage2").slideUp("slow");
+            });
+        });
+
+    </script>
 
 
 </body>
