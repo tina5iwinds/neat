@@ -48,7 +48,6 @@
     <!-- Icomoon Icon Fonts-->
     <link rel="stylesheet" href="css/icomoon.css">
     <!-- Bootstrap  -->
-    <link rel="stylesheet" href="css/bootstrap.css">
 
     <!-- Magnific Popup -->
     <link rel="stylesheet" href="css/magnific-popup.css">
@@ -135,8 +134,8 @@
                                 </select>
                         </div><br>
                         <div class="titles">面試科系 <input type="text" style="min-width: 100px; max-height: 25px;"></div>
-                            <br>
-                        
+                        <br>
+
                         <div class="titles">級分
                             <select class="selectpicker" data-size="10" style="min-width: 5%;">
                             <option>0</option>
@@ -218,13 +217,22 @@
                                 </select>
                         </div><br>
                         <div class="hi">
-                                <div class="titles">有無錄取</div>
-                                <a class="btn btn-item active">正取</a>
-                                <a class="btn btn-item active">備取</a>
-                                <a class="btn btn-item">無</a>
-                            </div>
-                            <br>
-                            <div class="titles">面試年份
+                            <div class="titles">有無錄取</div>
+                            <input class="hidden radio-label" type="radio" name="if_in" id="in" checked="checked" />
+                            <label class="button-label" for="in">
+                                <p>正取</p>
+                                </label>
+                            <input class="hidden radio-label" type="radio" name="if_in" id="waiting" />
+                            <label class="button-label" for="waiting">
+                                <p>備取</p>
+                                </label>
+                            <input class="hidden radio-label" type="radio" name="if_in" id="no_in" />
+                            <label class="button-label" for="no_in">
+                                <p>無</p>
+                                </label>
+                        </div>
+                        <br>
+                        <div class="titles">面試年份
                             <select class="selectpicker" data-size="10" style="width: 8%;">
                             <option>1999</option>
                             <option>2000</option>
@@ -249,138 +257,319 @@
                                 </select>
                         </div><br>
                         <div class="hi">
-                                <div class="titles">倍審資料</div>
-                                <a class="btn btn-item active">制式</a>
-                                <a class="btn btn-item">自製</a>
-                                <a class="btn btn-item">無</a>
-                            </div>
-                            <br>
-                            
-                        <h4>第一階段</h4>
-                        <input type="radio" id="oralflip" name="ExamType01" value="口試" required>口試
-                        <input type="radio" id="testflip" name="ExamType01" value="筆試">筆試
-                        <input type="radio" id="doingflip" name="ExamType01" value="參訪">參訪
-                        <br><br>
-                        
+                            <div class="titles">倍審資料</div>
+                            <input class="hidden radio-label" type="radio" name="preparing" id="yes-button" checked="checked" />
+                            <label class="button-label" for="yes-button">
+                                <p>制式</p>
+                                </label>
+                            <input class="hidden radio-label" type="radio" name="preparing" id="no-button" />
+                            <label class="button-label" for="no-button">
+                                <p>自製</p>
+                                </label>
+                            <input class="hidden radio-label" type="radio" name="preparing" id="maybe-button" />
+                            <label class="button-label" for="maybe-button">
+                                <p>無</p>
+                                </label>
+                        </div>
+                        <br>
 
+                        <div class="hi">
+                            <h4>第一階段</h4>
+
+                            <input class="hidden radio-label" type="radio" name="ExamType01" id="oralflip" checked="checked" />
+                            <label class="button-label" for="oralflip">
+                                <p>面試</p>
+                                </label>
+                            <input class="hidden radio-label" type="radio" name="ExamType01" id="testflip" />
+                            <label class="button-label" for="testflip">
+                                <p>筆試</p>
+                                </label>
+                            <input class="hidden radio-label" type="radio" name="ExamType01" id="doingflip"/>
+                            <label class="button-label" for="doingflip">
+                                <p>參訪<p>
+                                </label>
+                        </div>
+
+                        <br>
                         <div class="flex hide-on-small" id="oralpanel" style="display:none;">
                             <div class="hi">
                                 <div class="titles">面試官人數</div>
-                                <a class="btn btn-item active">1人</a>
-                                <a class="btn btn-item">2人</a>
-                                <a class="btn btn-item">3人</a>
-                                <a class="btn btn-item">4人</a>
-                                <a class="btn btn-item">5人</a>
+                                <input class="hidden radio-label" type="radio" name="s_interviewer1" id="1p" checked="checked" />
+                                <label class="button-label" for="1p">
+                                <p>1人</p>
+                                </label>
+                                <input class="hidden radio-label" type="radio" name="s_interviewer1" id="2p" />
+                                <label class="button-label" for="2p">
+                                <p>2人</p>
+                                </label>
+                                <input class="hidden radio-label" type="radio" name="s_interviewer1" id="3p" />
+                                <label class="button-label" for="3p">
+                                <p>3人</p>
+                                </label>
+                                <input class="hidden radio-label" type="radio" name="s_interviewer1" id="4p" />
+                                <label class="button-label" for="4p">
+                                <p>4人</p>
+                                </label>
+                                <input class="hidden radio-label" type="radio" name="s_interviewer1" id="5p" />
+                                <label class="button-label" for="5p">
+                                <p>5人或以上</p>
+                                </label>
                             </div>
                             <br>
                             <div class="hi">
                                 <div class="titles">面試類型</div>
-                                <a class="btn btn-item active">個人</a>
-                                <a class="btn btn-item">團體</a>
-                                <br><br>
+                                <input class="hidden radio-label" type="radio" name="s_type_interview1" id="self" checked="checked" />
+                                <label class="button-label" for="self">
+                                <p>個人</p>
+                                </label>
+                                <input class="hidden radio-label" type="radio" name="s_type_interview1" id="group" />
+                                <label class="button-label" for="group">
+                                <p>團體</p>
+                                </label>
                             </div>
+                            <br>
                             <div class="hi">
                                 <div class="titles">時間長度</div>
-                                <a class="btn btn-item active">5分鐘</a>
-                                <a class="btn btn-item">15分鐘</a>
-                                <a class="btn btn-item">30分鐘</a>
+                                <input class="hidden radio-label" type="radio" name="s_time_interview1" id="5min" checked="checked" />
+                                <label class="button-label" for="5min">
+                                <p>5分鐘</p>
+                                </label>
+                                <input class="hidden radio-label" type="radio" name="s_time_interview1" id="15min" />
+                                <label class="button-label" for="15min">
+                                <p>15分鐘</p>
+                                </label>
+                                <input class="hidden radio-label" type="radio" name="s_time_interview1" id="30min" />
+                                <label class="button-label" for="30min">
+                                <p>30分鐘</p>
+                                </label>
                             </div>
-                            <br><br>
-                            <div class="titles">題目：<input type="text" style="min-width: 450px;"></div>
                             <br>
-                            <div class="titles">答案：<input type="text" style="min-width: 450px;"></div>
+                            <div class="hii">
+                                <div class="titles">題目</div>
+                                <div class="row">
+                                    <div class="col-3">
+                                        <input class="effect-4" type="text" placeholder="例如：為什麼要申請我們學校？">
+                                        <span class="focus-border"></span>
+                                    </div>
+                                </div>
+                                <div class="titles">答案</div>
+                                <div class="row">
+                                    <div class="col-3">
+                                        <input class="effect-4" type="text" placeholder="">
+                                        <span class="focus-border"></span>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
 
                         <div class="flex hide-on-small" id="textpanel" style="display:none;">
-                            
-                            <div class="titles">題目：<input type="text" style="text-decoration: underline;  min-width: 100px;"></div>
                             <br>
-                            <div class="titles">答案：<input type="text" style="text-decoration: underline;  min-width: 100px;"></div>
+                            <div class="ha">
+                                <div class="titles">題型</div>
+                                <input id="toggle1" type="checkbox" data-rule="checked" checked>
+                                <label for="toggle1">單選</label>
 
-                            
-                            
+                                <input id="toggle2" type="checkbox">
+                                <label for="toggle2">多選</label>
 
-                        </div>
-                        <div class="flex hide-on-small" id="doingpanel" style="display:none;">
-                           <div class="titles">特殊需求</div><textarea style="width:300px;height:100px;">
-</textarea>
-                            <br>
+                                <input id="toggle3" type="checkbox">
+                                <label for="toggle3">申論</label>
+
+                                <input id="toggle4" type="checkbox">
+                                <label for="toggle4">簡答</label>
                             </div>
+
+                            <div class="hii">
+                               <div class="row">
+                                <div class="titles">題目</div>
+                                    <div class="col-3">
+                                        <input class="effect-4" type="text" placeholder="例如：為什麼要申請我們學校？">
+                                        <span class="focus-border"></span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                <div class="titles">答案</div>
+                                    <div class="col-3">
+                                        <input class="effect-4" type="text" placeholder="">
+                                        <span class="focus-border"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            </div>
+                            <div class="flex hide-on-small" id="doingpanel" style="display:none;">
+                            <div class="titles">特殊需求</div>
+                               <div class="row">
+                                <div class="col-3">
+                                    <input class="effect-4" type="text" placeholder="例如：需不需要穿正裝？">
+                                    <span class="focus-border"></span>
+                            </div>
+                                </div>
+                            </div>
+
                         <br><br>
-    
+
                         <div id="stage2">
+                           <div class="hi">
                             <h4>第二階段</h4>
-				    <input type="radio" id="oralflip1" name="InterviewType01" value="口試" >口試
-				    <input type="radio" id="testflip1" name="InterviewType01" value="筆試" >筆試
-					<input type="radio" id="doingflip1" name="InterviewType01" value="參訪" >參訪
-                       <div class="flex hide-on-small" id="oralpanel1" style="display:none;">
-                            <div class="hi">
+                               <input class="hidden radio-label" type="radio" name="InterviewType01" id="oralflip1" checked="checked" />
+                            <label class="button-label" for="oralflip1">
+                                <p>面試</p>
+                                </label>
+                            <input class="hidden radio-label" type="radio" name="InterviewType01" id="testflip1" />
+                            <label class="button-label" for="testflip1">
+                                <p>筆試</p>
+                                </label>
+                            <input class="hidden radio-label" type="radio" name="InterviewType01" id="doingflip1" />
+                            <label class="button-label" for="doingflip1">
+                                <p>參訪<p>
+                                </label>
+                           </div>
+                            <div class="flex hide-on-small" id="oralpanel1" style="display:none;">
+                                <div class="hi">
                                 <div class="titles">面試官人數</div>
-                                <a class="btn btn-item active">1人</a>
-                                <a class="btn btn-item">2人</a>
-                                <a class="btn btn-item">3人</a>
-                                <a class="btn btn-item">4人</a>
-                                <a class="btn btn-item">5人</a>
+                                <input class="hidden radio-label" type="radio" name="s_interviewer" id="1p" checked="checked" />
+                                <label class="button-label" for="1p">
+                                <p>1人</p>
+                                </label>
+                                <input class="hidden radio-label" type="radio" name="s_interviewer" id="2p" />
+                                <label class="button-label" for="2p">
+                                <p>2人</p>
+                                </label>
+                                <input class="hidden radio-label" type="radio" name="s_interviewer" id="3p" />
+                                <label class="button-label" for="3p">
+                                <p>3人</p>
+                                </label>
+                                <input class="hidden radio-label" type="radio" name="s_interviewer" id="4p" />
+                                <label class="button-label" for="4p">
+                                <p>4人</p>
+                                </label>
+                                <input class="hidden radio-label" type="radio" name="s_interviewer" id="5p" />
+                                <label class="button-label" for="5p">
+                                <p>5人或以上</p>
+                                </label>
                             </div>
                             <br>
                             <div class="hi">
                                 <div class="titles">面試類型</div>
-                                <a class="btn btn-item active">個人</a>
-                                <a class="btn btn-item">團體</a>
-                                <br><br>
+                                <input class="hidden radio-label" type="radio" name="s_type_interview" id="self" checked="checked" />
+                                <label class="button-label" for="self">
+                                <p>個人</p>
+                                </label>
+                                <input class="hidden radio-label" type="radio" name="s_type_interview" id="group" />
+                                <label class="button-label" for="group">
+                                <p>團體</p>
+                                </label>
                             </div>
+                            <br>
                             <div class="hi">
                                 <div class="titles">時間長度</div>
-                                <a class="btn btn-item active">5分鐘</a>
-                                <a class="btn btn-item">15分鐘</a>
-                                <a class="btn btn-item">30分鐘</a>
+                                <input class="hidden radio-label" type="radio" name="s_time_interview" id="5min" checked="checked" />
+                                <label class="button-label" for="5min">
+                                <p>5分鐘</p>
+                                </label>
+                                <input class="hidden radio-label" type="radio" name="s_time_interview" id="15min" />
+                                <label class="button-label" for="15min">
+                                <p>15分鐘</p>
+                                </label>
+                                <input class="hidden radio-label" type="radio" name="s_time_interview" id="30min" />
+                                <label class="button-label" for="30min">
+                                <p>30分鐘</p>
+                                </label>
                             </div>
-                            <br><br>
-                            <div class="titles">題目：<input type="text" style="text-decoration: underline;  min-width: 100px;"></div>
                             <br>
-                            <div class="titles">答案：<input type="text" style="text-decoration: underline;  min-width: 100px;"></div>
+                            <div class="hii">
+                                <div class="titles">題目</div>
+                                <div class="row">
+                                    <div class="col-3">
+                                        <input class="effect-4" type="text" placeholder="例如：為什麼要申請我們學校？">
+                                        <span class="focus-border"></span>
+                                    </div>
+                                </div>
+                                <div class="titles">答案</div>
+                                <div class="row">
+                                    <div class="col-3">
+                                        <input class="effect-4" type="text" placeholder="">
+                                        <span class="focus-border"></span>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
 
                         <div class="flex hide-on-small" id="textpanel1" style="display:none;">
-                            
-                            <div class="titles">題目：<input type="text" style="text-decoration: underline;  min-width: 100px;"></div>
                             <br>
-                            <div class="titles">答案：<input type="text" style="text-decoration: underline;  min-width: 100px;"></div>
+                            <div class="ha">
+                                <div class="titles">題型</div>
+                                <input id="toggle1" type="checkbox" data-rule="checked" checked>
+                                <label for="toggle1">單選</label>
 
-                        </div>
-                          <div class="flex hide-on-small" id="doingpanel1" style="display:none;">
-                           <div class="titles">特殊需求</div><textarea style="width:300px;height:100px;">
-</textarea>
-                            <br>
+                                <input id="toggle2" type="checkbox">
+                                <label for="toggle2">多選</label>
+
+                                <input id="toggle3" type="checkbox">
+                                <label for="toggle3">申論</label>
+
+                                <input id="toggle4" type="checkbox">
+                                <label for="toggle4">簡答</label>
                             </div>
-                          <br><br>
+
+                            <div class="hii">
+                                <div class="titles">題目</div>
+                                <div class="row">
+                                    <div class="col-3">
+                                        <input class="effect-4" type="text" placeholder="例如：為什麼要申請我們學校？">
+                                        <span class="focus-border"></span>
+                                    </div>
+                                </div>
+                                <div class="titles">答案</div>
+                                <div class="row">
+                                    <div class="col-3">
+                                        <input class="effect-4" type="text" placeholder="">
+                                        <span class="focus-border"></span>
+                                    </div>
+                                    <div class="titles">題目</div>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <input class="effect-4" type="text" placeholder="例如：為什麼要申請我們學校？">
+                                            <span class="focus-border"></span>
+                                        </div>
+                                    </div>
+                                    <div class="titles">答案</div>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <input class="effect-4" type="text" placeholder="">
+                                            <span class="focus-border"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            </div>
+                        <br>
+                            <div class="flex hide-on-small" id="doingpanel1" style="display:none">
+                            
+                                <div class="titles">特殊需求</div>
+                                    <input class="effect-4" type="text" placeholder="例如：為什麼要申請我們學校？">
+                                        <span class="focus-border"></span>
+                                
+                            </div>
+                            <br><br>
                             <div class="titles">想說的話:</div> <textarea style="width:300px;height:100px;">
 </textarea>
-                        <br>
-                        <div class="rate">
-                                <div class="titles">工作環境</div>
-                                <input type="radio" id="star5" name="rate" value="5" />
-                                <label for="star5" title="text">5 stars</label>
-                                <input type="radio" id="star4" name="rate" value="4" />
-                                <label for="star4" title="text">4 stars</label>
-                                <input type="radio" id="star3" name="rate" value="3" />
-                                <label for="star3" title="text">3 stars</label>
-                                <input type="radio" id="star2" name="rate" value="2" />
-                                <label for="star2" title="text">2 stars</label>
-                                <input type="radio" id="star1" name="rate" value="1" />
-                                <label for="star1" title="text">1 star</label>
-                                <br><br><br><br>
-                            </div>
+                            <br>
+                        </div>
+                        <div class="btn" type="submit">submit</div>
                     </div>
-                    <div class="btn" type="submit">submit</div>
-                    </div>
-                        <div class="col-md-1"></div>
-                    
+                    <div class="col-md-1"></div>
+
                 </div>
             </div>
         </div>
     </div>
-    
+
 
 
     <!-- END container-wrap -->
@@ -403,14 +592,8 @@
     <!-- Main -->
     <script src="js/main.js"></script>
 
-    <script>
-        $(function() {
-            $('a').click(function() {
-                $(this).addClass('active').siblings().removeClass('active');
-            });
-        });
-
-    </script>
+    
+    
     <script>
         $(document).ready(function() {
             $('#CollegeNameSelected').on('change', function() {
