@@ -92,7 +92,7 @@ li {
   display: block;
   margin: 10px 0 0 0;
 }
-button {
+.promo button {
   border: none;
   border-radius: 40px;
   background: #292b2e;

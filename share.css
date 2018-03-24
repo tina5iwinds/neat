@@ -1,30 +1,10 @@
-.flex .btn{
-    min-width: 80px;
-}
-.btn-item.active{
-    background: #66D37E;
-    color: #fff;
-}
-.btn-item{
-    border: 1px solid transparent;
-    display: inline-block;
-    box-shadow: none;
-    color: #9B9B9B;
-}
-.btn{
-    text-align: left;
-    transition: 0.2s ease-out;
-    border-radius: 2px;
-}
-.btn:hover{
-    color: #66D37E;
-}
-.btn-item:hover{
-    border: 1px solid #66D37E;
-}
-
-
 @import url(https://fonts.googleapis.com/css?family=Noto+Sans);
+
+hr.style9 {
+	border-top: 1px dashed #8c8b8b;
+	border-bottom: 1px dashed #fff;
+}
+
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -174,12 +154,20 @@
   display: none;
 }
 
+.col-1{
+    float: left;
+    width: 10%;
+}
 
+.col-5{
+    width: 45%;
+  position: relative;
+}
 
 .col-3 {
   float: left;
-  width: 27.33%;
-  margin: 40px 3%;
+  width: 40%;
+  margin: 20px;
   position: relative;
 } 
 
@@ -218,3 +206,80 @@ input[type="text"] {
   border: 2px solid #4caf50;
   z-index: 1;
 }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  transition: 0.3s all ease;
+}
+a:hover {
+  color: #B15947;
+}
+a:focus {
+  text-decoration: none;
+}
+a:active {
+  color: #FFF;
+}
+
+.addq {
+  display:flex;
+}
+
+.bttn {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  position: relative;
+}
+.bttn:after {
+  transition: 0.3s all ease;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 3px;
+  border: 3px solid #B15947;
+}
+.bttn:before {
+  content: '';
+  position: absolute;
+  border-radius: 3px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background: #fff;
+  z-index: -1;
+}
+.bttn:hover:after {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.bttn:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.bttn:active:before {
+  background-color: #f1481b;
+}
+.bttn:active:after {
+  border-color: #f1481b;
+}
+
